@@ -12,7 +12,9 @@ export default function DeleteConfirmation({ onConfirm, onCancel }) {
       clearInterval(interval)
     }
   },[])
+ 
   useEffect(()=>{
+    console.log(remaingingTime)
     const timer = setTimeout(()=>{
       onConfirm();
     },TIMER)
@@ -20,7 +22,7 @@ export default function DeleteConfirmation({ onConfirm, onCancel }) {
       clearTimeout(timer)
     }
   },[onConfirm])
- console.log(remaingingTime)
+  console.log(remaingingTime)
   return (
     <div id="delete-confirmation">
       <h2>Are you sure?</h2>
